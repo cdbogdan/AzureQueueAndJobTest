@@ -1,0 +1,7 @@
+packages/
+ReadQueueJob/bin/
+AzureQueueAndTable/obj/
+AzureQueueAndTable/bin/
+ReadQueueJob/obj/
+Domain/obj/
+Domain/bin/
