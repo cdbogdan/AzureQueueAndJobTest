@@ -11,9 +11,11 @@ namespace AzureQueueAndTable
 {
     class Program
     {
+
+        // write a message to an azure queue
+
         static void Main(string[] args)
         {
-
             // get the storage account
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
@@ -27,7 +29,12 @@ namespace AzureQueueAndTable
             // Create a message and add it to the queue.
             while (true)
             {
-                var jsonMessage = JsonConvert.SerializeObject(new Item() {Name = "bogdan", Age = 1});
+                var jsonMessage = JsonConvert.SerializeObject(new Item()
+                {
+                    Name = "bogdan",
+                    Age = 1,
+                });
+
                 var message = new CloudQueueMessage(jsonMessage);
                 queue.AddMessage(message);
 
